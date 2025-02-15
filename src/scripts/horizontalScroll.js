@@ -52,7 +52,7 @@ scrollContainer.addEventListener("touchmove", (evt) => {
   if (!isDown) return;
   evt.preventDefault(); // Prevent vertical scrolling
   const x = evt.touches[0].pageX - scrollContainer.offsetLeft;
-  const walk = (startX - x) * 1.5; // Adjust sensitivity if needed
+  const walk = (startX - x) * 1; // Adjust sensitivity if needed
   scrollContainer.scrollLeft = scrollLeft + walk;
 });
 
