@@ -3,7 +3,10 @@ const scrollContainer = document.querySelector("main");
 // Desktop scrolling
 scrollContainer.addEventListener("wheel", (evt) => {
   evt.preventDefault();
-  scrollContainer.scrollLeft += evt.deltaY;
+  scrollContainer.scrollBy({
+    left: evt.deltaY > 0 ? 50 : -50, // Scrolls smoothly in small increments
+    behavior: "auto",
+  });
 });
 
 // Touch-based scrolling
@@ -27,6 +30,9 @@ scrollContainer.addEventListener("touchmove", (evt) => {
 
   // Move horizontally, even if scrolling vertically
   if (Math.abs(deltaY) > Math.abs(deltaX)) {
-    scrollContainer.scrollLeft = scrollLeft + deltaY;
+    scrollContainer.scrollBy({
+      left: deltaY * 1.5, // Adjust sensitivity
+      behavior: "smooth",
+    });
   }
 });
