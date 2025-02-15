@@ -31,8 +31,8 @@ scrollContainer.addEventListener("touchmove", (evt) => {
   // Move horizontally, even if scrolling vertically
   if (Math.abs(deltaY) > Math.abs(deltaX)) {
     scrollContainer.scrollBy({
-      left: deltaY * 1.5, // Adjust sensitivity
-      behavior: "auto",
+      left: deltaY * 0.5, // Adjust sensitivity
+      behavior: "smooth",
     });
   }
 });
