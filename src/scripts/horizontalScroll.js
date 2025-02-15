@@ -32,7 +32,7 @@ scrollContainer.addEventListener("touchmove", (evt) => {
   if (Math.abs(deltaY) > Math.abs(deltaX)) {
     scrollContainer.scrollBy({
       left: deltaY * 0.5, // Adjust sensitivity
-      behavior: "smooth",
+      behavior: "auto",
     });
   }
 });
